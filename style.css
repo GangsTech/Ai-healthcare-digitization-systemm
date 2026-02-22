@@ -1,0 +1,197 @@
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+}
+
+/* ================= ROOT THEME ================= */
+:root{
+    --bg-dark:#050b1a;
+    --bg-card:rgba(18,25,45,0.72);
+    --glass:rgba(255,255,255,0.05);
+    --accent:#38bdf8;
+    --accent2:#2563eb;
+    --text-main:#e5e7eb;
+    --text-muted:#94a3b8;
+}
+
+/* ================= BODY ================= */
+body{
+    background: radial-gradient(circle at top,#0b1220,#020617);
+}
+
+/* ================= APP BACKGROUND ================= */
+.stApp{
+    background: linear-gradient(135deg,#050b1a,#020617);
+}
+
+/* ================= PAGE FADE IN ================= */
+.stApp{
+    animation:fadein 0.8s ease;
+}
+
+@keyframes fadein{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= SIDEBAR ================= */
+[data-testid="stSidebar"]{
+    background: linear-gradient(180deg,#020617,#020617,#0b1220);
+    border-right:1px solid rgba(255,255,255,0.08);
+    box-shadow:inset -5px 0 20px rgba(0,0,0,0.6);
+}
+
+[data-testid="stSidebar"] *{
+    color:var(--text-main);
+}
+
+/* ================= TITLES ================= */
+h1{
+    color:#7dd3fc;
+    font-weight:800;
+    letter-spacing:0.5px;
+    text-shadow:0 0 20px rgba(56,189,248,0.4);
+}
+
+h2,h3{
+    color:#bae6fd;
+}
+
+/* ================= GLASS CARD ================= */
+.card{
+    background:var(--bg-card);
+    backdrop-filter: blur(18px);
+    border-radius:22px;
+    padding:26px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.7),
+        inset 0 0 0 1px rgba(255,255,255,0.06);
+    transition:0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px) scale(1.01);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.9),
+        0 0 25px rgba(56,189,248,0.25);
+}
+
+/* ================= BUTTONS ================= */
+.stButton>button{
+    background: linear-gradient(135deg,var(--accent2),var(--accent));
+    color:white;
+    border-radius:14px;
+    padding:11px 26px;
+    border:none;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    transition:0.35s ease;
+    box-shadow:
+        0 10px 25px rgba(56,189,248,0.35),
+        inset 0 0 0 1px rgba(255,255,255,0.15);
+}
+
+.stButton>button:hover{
+    transform:translateY(-3px) scale(1.03);
+    background: linear-gradient(135deg,var(--accent),var(--accent2));
+    box-shadow:
+        0 18px 45px rgba(56,189,248,0.6),
+        0 0 25px rgba(56,189,248,0.6);
+}
+
+/* ================= INPUTS ================= */
+input, textarea, select{
+    background:rgba(2,6,23,0.8)!important;
+    color:white!important;
+    border-radius:14px!important;
+    padding:12px!important;
+    border:1px solid rgba(255,255,255,0.12)!important;
+    transition:0.25s ease;
+}
+
+input:focus, textarea:focus{
+    border:1px solid var(--accent)!important;
+    box-shadow:0 0 15px rgba(56,189,248,0.6);
+    transform:scale(1.02);
+}
+
+/* ================= METRIC CARDS ================= */
+[data-testid="metric-container"]{
+    background:linear-gradient(145deg,#020617,#0b1220);
+    border-radius:22px;
+    padding:26px;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.7),
+        inset 0 0 0 1px rgba(255,255,255,0.06);
+    transition:0.4s ease;
+}
+
+[data-testid="metric-container"]:hover{
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.8),
+        0 0 25px rgba(56,189,248,0.35);
+}
+
+[data-testid="metric-container"] label{
+    color:var(--text-muted);
+}
+
+[data-testid="metric-container"] div{
+    color:white;
+    font-size:34px;
+    font-weight:700;
+}
+
+/* ================= DATAFRAME ================= */
+.stDataFrame{
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.8);
+}
+
+/* ================= ALERTS ================= */
+.stAlert-success{
+    background:#022c22;
+    color:#34d399;
+    border-left:6px solid #34d399;
+}
+
+.stAlert-error{
+    background:#3f0d12;
+    color:#fb7185;
+    border-left:6px solid #fb7185;
+}
+
+.stAlert-info{
+    background:#020617;
+    color:#38bdf8;
+    border-left:6px solid #38bdf8;
+}
+
+/* ================= FILE UPLOAD ================= */
+[data-testid="stFileUploader"]{
+    background:rgba(2,6,23,0.85);
+    border-radius:18px;
+    padding:18px;
+    border:1px dashed rgba(255,255,255,0.2);
+}
+
+/* ================= CANVAS ================= */
+canvas{
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+/* ================= SCROLLBAR ================= */
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--accent),var(--accent2));
+    border-radius:10px;
+}
